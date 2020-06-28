@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
+const Facts = lazy(() => import('./routes/FunFacts'));
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/facts" component={Facts} />
         </Switch>
       </Suspense>
     </Router>
