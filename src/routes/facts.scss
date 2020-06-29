@@ -29,7 +29,7 @@
     width: 45%;
     height: 450px;
     font-size: 20px;
-    box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
+    /* box-shadow: 2px 2px 12px 8px rgb(182, 177, 182); */
     
 }
 
@@ -39,9 +39,10 @@
     /* align-items: center; */
     /* justify-content: start; */
     margin-bottom: 20px;
+    justify-content: start;
     padding: 5px;
     text-align: center;
-    background-color: lightgray;
+    background-color: #8d2b06;
    
 }
 
@@ -49,14 +50,14 @@
     flex: 20;
     justify-content: start;
     padding: 5px;
-    /* background-color: #f3f6f9; */
-    /* border-radius: 12px; */
+    background-color: #c2a58d;
 }
 .block-footer {
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    margin: 5px;
+    padding: 5px;
+    background-color: #c2a58d;
 }
 
 .side-block {
@@ -91,25 +92,84 @@
 .block-1{
     width: 20%;
     float: left;
-    box-shadow: -5px 0px 14px #c8c8c8;
+    /* box-shadow: -5px 0px 14px #c8c8c8; */
     height: 400px;
     margin-top: 31px;
     border-radius: 0;
     cursor: pointer;
+    -webkit-filter: blur(4px);
+    filter: blur(3px);
 }
 .block-2{
     width: 59%;
     float: left; 
     border-radius: 0;
+    box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
 
 }
 .block-3{
     width: 20%;
     float: left;
-    box-shadow: 6px 0px 14px #c8c8c8;
+    /* box-shadow: 6px 0px 14px #c8c8c8; */
     height: 400px;
     margin-top: 31px;
     border-radius: 0;
     cursor: pointer;
+    -webkit-filter: blur(4px);
+    filter: blur(3px);
+}
 
+
+.Block_1_0_transition {
+    width: 0%;
+    transition: width 2s;
+    transform: translateX(-500vw);
+}
+
+.Block_2_1_transition {
+    width: 20%;
+    height: 400px;
+    filter: blur(3px);
+    margin-top: 31px;
+    box-shadow: none;
+    transition: width 500ms, height 1s, margin-top 1s;
+}
+
+.Block_3_2_transition {
+    width: 59%;
+    height: 450px;
+    filter: none;
+    margin-top: 0px;
+    box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
+    transition: width 500ms, height 2s, filter 500ms, margin-top 2s;
+    
+}
+
+.Block_1_2_transition {
+    width: 59%;
+    height: 450px;
+    filter: none;
+    margin-top: 0px;
+    box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
+    transition: width 2s, height 3s, filter 1s, margin-top 3s;
+}
+
+.Block_2_3_transition {
+    width: 20%;
+    height: 400px;
+    filter: blur(3px);
+    margin-top: 31px;
+    box-shadow: none;
+    transition: width 3s, height 1.5s, margin-top 1.5s;
+}
+
+.Block_3_0_transition {
+    display: none;
+    transition: display 1s;
+    transform: translateX(-500vw);
+}
+
+.footerBlock-transition {
+    display: none;
+    transition: display 1s;
 }
