@@ -1,12 +1,14 @@
 .factLayout{
-    width: 100%;
-    margin: 10px;
-    padding: 50px;
-    height: 100%;
-    border: 1px solid gray;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
+       /* width: 100%; */
+       margin: 10px;
+       /* padding: 50px; */
+       height: 100%;
+       /* border: 1px solid gray; */
+       /* border-radius: 4px; */
+       /* display: flex; */
+       justify-content: center;
+       width: 80%;
+       padding-top: 60px;
 }
 
 .blocks {
@@ -23,29 +25,28 @@
     width: 45%;
     height: 450px;
     font-size: 20px;
-    border-radius: 7px;
-    -webkit-box-shadow: 0px 1px 20px 8px rgba(110,106,110,1);
-    -moz-box-shadow: 0px 1px 20px 8px rgba(110,106,110,1);
-    box-shadow: 0px 1px 20px 8px rgba(110,106,110,1);
+    box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
+    
 }
 
 .block-title {
     display: flex;
-    flex: 2;
-    align-items: center;
+    flex: 2 1;
+    /* align-items: center; */
     justify-content: start;
     margin-bottom: 20px;
     padding: 5px;
-    background-color: #777777;
-    border-radius: 4px;
+    text-align: center;
+    background-color: lightgray;
+   
 }
 
 .blocks-description {
     flex: 20;
     justify-content: start;
     padding: 5px;
-    background-color: #f3f6f9;
-    border-radius: 12px;
+    /* background-color: #f3f6f9; */
+    /* border-radius: 12px; */
 }
 .block-footer {
     display: flex;
@@ -77,4 +78,34 @@
     border-style: none;
     color: #e4e4e4;
     font-size: 16px;
+}
+
+.parent-block{
+    width: 100%;
+}
+
+.block-1{
+    width: 20%;
+    float: left;
+    box-shadow: -5px 0px 14px #c8c8c8;
+    height: 400px;
+    margin-top: 31px;
+    border-radius: 0;
+    cursor: pointer;
+}
+.block-2{
+    width: 59%;
+    float: left; 
+    border-radius: 0;
+
+}
+.block-3{
+    width: 20%;
+    float: left;
+    box-shadow: 6px 0px 14px #c8c8c8;
+    height: 400px;
+    margin-top: 31px;
+    border-radius: 0;
+    cursor: pointer;
+
 }
