@@ -1,5 +1,5 @@
 import React from 'react';
-import './facts.css';
+import './facts.scss';
 
 
 class FunFacts extends React.Component {
