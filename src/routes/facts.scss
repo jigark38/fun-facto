@@ -120,6 +120,7 @@
 
 .Block_1_0_transition {
     width: 0%;
+    text-indent: -9999px;
     transition: width 400ms;
     /* transform: translateX(-500vw); */
 }
@@ -163,8 +164,9 @@
 }
 
 .Block_3_0_transition {
-    display: none;
-    transition: display 400ms;
+    width: 0%;
+    text-indent: -9999px;
+    transition: width 400ms;
     /* transform: translateX(-500vw); */
 }
 
@@ -175,4 +177,32 @@
 
 .block-unvisible {
     visibility: hidden;;
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 2000px;
+    width: 100%;
+    height: 100%;
+    padding:15px;
+    border: 4px solid gray;
+    border-radius: 15px;
+    z-index: 1;
+    background-color: #8d2b06;
+    visibility: hidden;
+}
+
+.close-popup {
+    font-size: 34px;
+    position: fixed;
+    top:5px;
+    color: gray;
+    right: 20px;
+}
+
+.visible-popup {
+  visibility: visible;
+  top: 0;
+  transition: top 600ms ease-in;
 }

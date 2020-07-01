@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import './facts.scss';
 
 
@@ -19,6 +19,7 @@ class FunFacts extends React.Component {
         this.block1Desc = React.createRef();
         this.block2Desc = React.createRef();
         this.block3Desc = React.createRef();
+        this.popdiv = React.createRef();
         this.data = [
             {title: 'Title 1', desc: 'Description 1'},
             {title: 'Title 2', desc: 'Description 2'},
@@ -41,10 +42,12 @@ class FunFacts extends React.Component {
 
     componentDidMount() {
         this.fillDataoOnBlocks(this.counter);
+        document.addEventListener("keydown", this.keyDownHandler);
     }
 
     rightBlockHandler = () => {
         if(this.counter + 1 >= this.data.length) return;
+        ++this.counter;
 
         const block1 = this.leftBlockRef.current;
         block1.classList.toggle("Block_1_0_transition");
@@ -66,12 +69,15 @@ class FunFacts extends React.Component {
             block3.classList.toggle("Block_3_2_transition");
 
             footerBlock.classList.toggle("footerBlock-transition");
-            this.fillDataoOnBlocks(++this.counter);
+            this.fillDataoOnBlocks(this.counter);
         }, 350);
         
     }
 
     leftBlockHandler = () => {
+        if(this.counter - 1 < 0) return;
+        --this.counter;
+
         const block1 = this.leftBlockRef.current;
         block1.classList.toggle("Block_1_2_transition");
 
@@ -93,7 +99,7 @@ class FunFacts extends React.Component {
             block3.classList.toggle("Block_3_0_transition");
 
             footerBlock.classList.toggle("footerBlock-transition");
-            this.fillDataoOnBlocks(--this.counter);
+            this.fillDataoOnBlocks(this.counter);
         }, 350);
     }
 
@@ -119,9 +125,27 @@ class FunFacts extends React.Component {
         }
     }
 
+    keyDownHandler = (e) => {
+        console.log('key press', e.which);
+        if(e.which === 37) {
+            this.leftBlockHandler();
+        } else if (e.which ===39) {
+            this.rightBlockHandler();
+        }
+    }
+
+    openMoreDialogHandler = () => {
+        this.popdiv.current.classList.add('visible-popup');
+    }
+
+    closePopupHandler = () => {
+        this.popdiv.current.classList.remove('visible-popup');
+    }
+
 
     render() {
         return (
+            <>
             <div className="container">
                 <div className="factLayout">
                     <div className="blocks">
@@ -152,7 +176,7 @@ class FunFacts extends React.Component {
                                     <span ref={this.block2Desc}>Description of 1</span>
                                 </div>
                                 <div className="block-footer" ref={this.footerRef}>
-                                    <button className="more"> More </button>
+                                    <button className="more" onClick={this.openMoreDialogHandler}> More </button>
                                 </div>
                             </div>
 
@@ -176,8 +200,13 @@ class FunFacts extends React.Component {
                     </div>
                 </div>
             </div>
+
+            <div class="popup" ref={this.popdiv}>
+                <span className="close-popup" onClick={this.closePopupHandler}>X</span>
+            </div>
+            </>
         );
     }
 }
-
+ 
 export default FunFacts;
