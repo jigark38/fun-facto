@@ -120,8 +120,8 @@
 
 .Block_1_0_transition {
     width: 0%;
-    transition: width 2s;
-    transform: translateX(-500vw);
+    transition: width 400ms;
+    /* transform: translateX(-500vw); */
 }
 
 .Block_2_1_transition {
@@ -130,7 +130,7 @@
     filter: blur(3px);
     margin-top: 31px;
     box-shadow: none;
-    transition: width 500ms, height 1s, margin-top 1s;
+    transition: width 300ms, height 500ms, margin-top 500ms;
 }
 
 .Block_3_2_transition {
@@ -139,7 +139,7 @@
     filter: none;
     margin-top: 0px;
     box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
-    transition: width 500ms, height 2s, filter 500ms, margin-top 2s;
+    transition: width 300ms, height 500ms, filter 100ms, margin-top 500ms;
     
 }
 
@@ -149,7 +149,8 @@
     filter: none;
     margin-top: 0px;
     box-shadow: 2px 2px 12px 8px rgb(182, 177, 182);
-    transition: width 2s, height 3s, filter 1s, margin-top 3s;
+    margin-left:180px;
+    transition: width 300ms, height 500ms, filter 100ms, margin-top 500ms, margin-left 500ms;
 }
 
 .Block_2_3_transition {
@@ -158,16 +159,20 @@
     filter: blur(3px);
     margin-top: 31px;
     box-shadow: none;
-    transition: width 3s, height 1.5s, margin-top 1.5s;
+    transition: width 300ms, height 500ms, margin-top 500ms, filter 100ms;
 }
 
 .Block_3_0_transition {
     display: none;
-    transition: display 1s;
-    transform: translateX(-500vw);
+    transition: display 400ms;
+    /* transform: translateX(-500vw); */
 }
 
 .footerBlock-transition {
     display: none;
     transition: display 1s;
+}
+
+.block-unvisible {
+    visibility: hidden;;
 }

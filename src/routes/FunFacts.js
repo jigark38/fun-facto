@@ -13,9 +13,39 @@ class FunFacts extends React.Component {
         this.leftBlockRef = React.createRef();
         this.mainBlockRef = React.createRef();
         this.footerRef = React.createRef();
+        this.block1Title = React.createRef();
+        this.block2Title = React.createRef();
+        this.block3Title = React.createRef();
+        this.block1Desc = React.createRef();
+        this.block2Desc = React.createRef();
+        this.block3Desc = React.createRef();
+        this.data = [
+            {title: 'Title 1', desc: 'Description 1'},
+            {title: 'Title 2', desc: 'Description 2'},
+            {title: 'Title 3', desc: 'Description 3'},
+            {title: 'Title 4', desc: 'Description 4'},
+            {title: 'Title 5', desc: 'Description 5'},
+            {title: 'Title 6', desc: 'Description 6'},
+            {title: 'Title 7', desc: 'Description 7'},
+            {title: 'Title 8', desc: 'Description 8'},
+            {title: 'Title 9', desc: 'Description 9'},
+            {title: 'Title 10', desc: 'Description 10'},
+            {title: 'Title 11', desc: 'Description 11'},
+            {title: 'Title 12', desc: 'Description 12'},
+            {title: 'Title 13', desc: 'Description 13'},
+            {title: 'Title 14', desc: 'Description 14'},
+            {title: 'Title 15', desc: 'Description 15'}
+        ];
+        this.counter = 0;
+    }
+
+    componentDidMount() {
+        this.fillDataoOnBlocks(this.counter);
     }
 
     rightBlockHandler = () => {
+        if(this.counter + 1 >= this.data.length) return;
+
         const block1 = this.leftBlockRef.current;
         block1.classList.toggle("Block_1_0_transition");
 
@@ -36,8 +66,8 @@ class FunFacts extends React.Component {
             block3.classList.toggle("Block_3_2_transition");
 
             footerBlock.classList.toggle("footerBlock-transition");
-
-        }, 1500);
+            this.fillDataoOnBlocks(++this.counter);
+        }, 350);
         
     }
 
@@ -63,8 +93,30 @@ class FunFacts extends React.Component {
             block3.classList.toggle("Block_3_0_transition");
 
             footerBlock.classList.toggle("footerBlock-transition");
+            this.fillDataoOnBlocks(--this.counter);
+        }, 350);
+    }
 
-        }, 2600);
+    fillDataoOnBlocks(cnt) {
+        if(cnt - 1 < 0 ) {
+            this.leftBlockRef.current.classList.add('block-unvisible');
+        } else {
+            this.leftBlockRef.current.classList.remove('block-unvisible');
+            this.block1Title.current.innerText = this.data[cnt - 1].title;
+            this.block1Desc.current.innerText = this.data[cnt - 1].desc;
+        }
+
+        this.block2Title.current.innerText = this.data[cnt].title;
+        this.block2Desc.current.innerText = this.data[cnt].desc;
+
+        //console.log(cnt, this.data.length);
+        if(cnt + 1 < this.data.length){
+            this.rightBlockRef.current.classList.remove('block-unvisible');
+            this.block3Title.current.innerText = this.data[cnt + 1].title;
+            this.block3Desc.current.innerText = this.data[cnt + 1].desc;
+        } else {
+            this.rightBlockRef.current.classList.add('block-unvisible');
+        }
     }
 
 
@@ -80,11 +132,11 @@ class FunFacts extends React.Component {
                         <div className="parent-block" >
                             <div className="block main-block block-1" ref={this.leftBlockRef} onClick={this.leftBlockHandler}>
                                 <div className="block-title">
-                                <h4>Title of 1</h4>
+                                <h4 ref={this.block1Title}>Title of 1</h4>
 
                                 </div>
                                 <div className="blocks-description">
-                                    <span>Description of 1</span>
+                                    <span ref={this.block1Desc}>Description of 1</span>
                                 </div>
                                 <div className="block-footer">
                                     {/* <button className="more"> More </button> */}
@@ -93,11 +145,11 @@ class FunFacts extends React.Component {
 
                             <div className="block main-block block-2" ref={this.mainBlockRef}>
                                 <div className="block-title">
-                                <h4>Title of 2</h4>
+                                <h4 ref={this.block2Title}>Title of 2</h4>
 
                                 </div>
                                 <div className="blocks-description">
-                                    <span>Description of 1</span>
+                                    <span ref={this.block2Desc}>Description of 1</span>
                                 </div>
                                 <div className="block-footer" ref={this.footerRef}>
                                     <button className="more"> More </button>
@@ -106,10 +158,10 @@ class FunFacts extends React.Component {
 
                             <div className="block main-block block-3" ref={this.rightBlockRef} onClick={this.rightBlockHandler}>
                                 <div className="block-title">
-                                    <h4>Title of 3</h4>
+                                    <h4 ref={this.block3Title}>Title of 3</h4>
                                 </div>
                                 <div className="blocks-description">
-                                    <span>Description of 1</span>
+                                    <span ref={this.block3Desc}>Description of 1</span>
                                 </div>
                                 <div className="block-footer">
                                     {/* <button className="more"> More </button> */}
