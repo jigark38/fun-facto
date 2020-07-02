@@ -1,0 +1,127 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  
+  .row {
+    display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 100%;
+  }
+  
+  .block-1, .block-2 {
+  
+    margin-bottom: 20px;
+    width: 45%;
+    height: 340px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    position: relative;
+   
+  }
+  
+  .block-list {
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-flow: column;
+    overflow-y: auto;
+    height: 90%;
+  }
+  .block-list div {
+    display: inline;
+  }
+  
+  .footer {
+    clear: left;
+    position: relative;
+    width: 100%;
+    border: 1px solid #D3D3D3;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-inside {
+    width: 60%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .footer-inside input {
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #b1b0b0;
+  }
+  
+  .footer-inside button {
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #b1b0b0;
+  }
+  
+  
+  .block-label {
+      padding: 0 10px;
+      position: relative;
+      background: white;
+      font-size: 24px;
+      top: -15px;
+  }
+  
+  .pending-label {
+    left: 23px;
+  }
+  
+  .pending-counter-label {
+    left: 361px;
+  }
+  
+  .complete-label {
+    left: calc(90% - 80px);
+  }
+  
+  .item-list {
+    cursor: pointer;
+    padding: 10px 0;
+  }
+  
+  .item-list:hover{
+    background-color:#529ba3;
+  }
+  
+  .fadeOut{
+    opacity:0;
+    transition: opacity 500ms ease-out;
+  
+  }
+  
+  .noOpacity {
+    opacity: 0.01;
+    padding-left: 300px;
+    color: bisque;
+  }
+  
+  .fadeIn{
+    opacity: 1;
+    padding-left: 0px;
+    color: black;
+    transition: color 200ms ease-in-out, padding-left 200ms ease-in, opacity 100ms ease-in;
+  }
+  
+  .noData {
+    margin: 0 auto;
+    position: relative;
+    top:40%;
+  }

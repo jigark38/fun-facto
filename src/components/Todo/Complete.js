@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import './todo.scss';
 
 const Complete = ({todos, clickItem}) => {
     return(

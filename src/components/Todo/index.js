@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
 //import Pending from '../modules/Pending';
-import Complete from '../modules/Complete';
-import NewToDo from '../modules/NewToDo';
+import Complete from './Complete';
+import NewToDo from './NewToDo';
 import { v4 as uuidv4 } from 'uuid';
+import './todo.scss';
 
-const PendingLayout = React.lazy(() => import('../modules/Pending'));
+const PendingLayout = React.lazy(() => import('./Pending'));
 let allowPendingOperation = true;
 
 class HomePage extends React.Component {
@@ -188,7 +189,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="header">
+                <div>
                     <center><h1> Learn React To Do App</h1></center>
                 </div>
                 <div className="row">
