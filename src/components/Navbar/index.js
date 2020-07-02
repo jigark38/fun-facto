@@ -12,9 +12,9 @@ function NavBar() {
             <li>
                <NavLink to="/about" activeClassName="active" >About Us</NavLink>
             </li>
-            <li>
+            {/* <li>
                <NavLink to="/facts" activeClassName="active" >Fun facts</NavLink>
-            </li>
+            </li> */}
          </ul>
   )
 }
