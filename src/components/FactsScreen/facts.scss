@@ -189,16 +189,14 @@
     border: 4px solid gray;
     border-radius: 15px;
     z-index: 1;
-    background-color: #8d2b06;
+    background-color: white;
     visibility: hidden;
 }
 
 .close-popup {
-    font-size: 34px;
-    position: fixed;
-    top:5px;
-    color: gray;
-    right: 20px;
+    font-size: 40px !important;
+    float: right;    
+    cursor: pointer;
 }
 
 .visible-popup {

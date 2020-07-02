@@ -1,3 +1,37 @@
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
+
+.border-bottom-1{
+    border-bottom: 1px solid lightgray;
+}
+
+.pad-left-10{
+    padding-left: 10px;
+}
+
+.pad-left-0{
+    padding-left: 0px !important;
+}
+.mar-bottom-10{
+    margin-bottom: 10px !important;
+}
+
+.fact-img{
+    padding: 15px;
+    width: 100%;
+}
+
+.bullet-point {
+    font-size: 24px;
+    padding-right: 12px;
+    color: #e400ff;
+}
+
+.font-size-21{
+    font-size: 21px !important;
+}
+
+.font-family-cur{
+    // font-family: cursive;
+}
